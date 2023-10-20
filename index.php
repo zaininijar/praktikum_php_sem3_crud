@@ -15,26 +15,30 @@
         <?php
         include 'connection.php';
 
-        if ($_GET["p"] == "mhs_add") {
-            echo '
-                <ul class="nav-link">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="?p=mhs_add">-> Tambah</a></li>
-                    <li><a href="?p=mhs_edit">Edit</a></li>
-                </ul>
-            ';
-            include "mahasiswa/mhs_add.php";
-        } else if ($_GET["p"] == "mhs_edit") {
-            echo '
-                <ul class="nav-link">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="?p=mhs_add">Tambah</a></li>
-                    <li><a href="?p=mhs_edit">-> Edit</a></li>
-                </ul>
-            ';
-            include "mahasiswa/mhs_edit.php";
-        } else if ($_GET["p"] == "mhs_delete") {
-            include "mahasiswa/mhs_delete.php";
+        if(isset($_GET["p"])) {
+            if ($_GET["p"] == "mhs_add") {
+                echo '
+                    <ul class="nav-link">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="?p=mhs_add">-> Tambah</a></li>
+                        <li><a href="?p=mhs_edit">Edit</a></li>
+                    </ul>
+                ';
+                include "mahasiswa/mhs_add.php";
+            } elseif ($_GET["p"] == "mhs_edit") {
+                echo '
+                    <ul class="nav-link">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="?p=mhs_add">Tambah</a></li>
+                        <li><a href="?p=mhs_edit">-> Edit</a></li>
+                    </ul>
+                ';
+                include "mahasiswa/mhs_edit.php";
+            } elseif ($_GET["p"] == "mhs_update") {
+                include "mahasiswa/mhs_update.php";
+            } elseif ($_GET["p"] == "mhs_delete") {
+                include "mahasiswa/mhs_delete.php";
+            }
         } else {
             echo '
                 <ul class="nav-link">

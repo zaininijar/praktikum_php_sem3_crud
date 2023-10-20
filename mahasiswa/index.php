@@ -36,26 +36,29 @@ $result = mysqli_query($conn, $sql);
         </thead>
         <tbody style="font-size:smaller; text-align: center;">
             <?php if ($result->num_rows > 0) : ?>
-                <?php $no = 1; ?>
-                <?php while ($row = $result->fetch_assoc()) : ?>
-                    <tr>
-                        <th><?php echo $no ?></th>
-                        <td style="text-align: left;">
-                            <div style="white-space: nowrap;">No BP :<?php echo $row['nobp'] ?></div>
-                            <div style="white-space: nowrap;">Nama :<?php echo $row['nama'] ?></div>
-                            <div style="white-space: nowrap;">Kelas :<?php echo 'IF-' . $row['kelas'] ?></div>
-                        </td>
-                        <td><?php echo $row['tmp_lahir'] ?></td>
-                        <td><?php echo date('d, M, Y', $row['tgl_lahir']) ?></td>
-                        <td><?php echo $row['jenis_kelamin'] ?></td>
-                        <td><?php echo $row['alamat'] ?></td>
-                        <td><?php echo $row['nomor_hp'] ?></td>
-                        <td><?php echo $row['email'] ?></td>
-                        <td><img height="50" src="images/<?php echo $row['foto'] ?>" alt=""></td>
-                        <td><a href="?p=mhs_delete&id_mhs=<?php echo $row['id'] ?>">Delete</a></td>
-                    </tr>
-                    <?php $no++ ?>
-                <?php endwhile; ?>
+            <?php $no = 1; ?>
+            <?php while ($row = $result->fetch_assoc()) : ?>
+            <tr>
+                <th><?php echo $no ?></th>
+                <td style="text-align: left;">
+                    <div style="white-space: nowrap;">No BP :<?php echo $row['nobp'] ?></div>
+                    <div style="white-space: nowrap;">Nama :<?php echo $row['nama'] ?></div>
+                    <div style="white-space: nowrap;">Kelas :<?php echo 'IF-' . $row['kelas'] ?></div>
+                </td>
+                <td><?php echo $row['tmp_lahir'] ?></td>
+                <td><?php echo $row['tgl_lahir'] ?></td>
+                <td><?php echo $row['jenis_kelamin'] ?></td>
+                <td><?php echo $row['alamat'] ?></td>
+                <td><?php echo $row['nomor_hp'] ?></td>
+                <td><?php echo $row['email'] ?></td>
+                <td><img height="50" src="images/<?php echo $row['foto'] ?>" alt=""></td>
+                <td>
+                    <a href="?p=mhs_edit&id_mhs=<?= $row['id'] ?>">Edit</a>
+                    <a href="?p=mhs_delete&id_mhs=<?php echo $row['id'] ?>">Delete</a>
+                </td>
+            </tr>
+            <?php $no++ ?>
+            <?php endwhile; ?>
             <?php endif; ?>
         </tbody>
     </table>
