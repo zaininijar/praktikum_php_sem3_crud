@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 20px 80px;
+}
+
+.nav-link {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  border: 1px solid;
+  padding: 10px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+form div input[type="text"],
+form div input[type="file"],
+form div input[type="email"],
+textarea {
+  width: 60%;
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+}
+
+form div input[type="date"],
+form div select {
+  width: 60%;
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+}
+
+form div input[type="file"] {
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid;
+}
+
+.radio-gender {
+  border: 1px solid;
+  width: 60%;
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.heading-2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+th {
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+
+td {
+  padding: 5px 10px;
+}
+
+table {
+  width: 100%;
+  font-size: 14px !important;
+}
