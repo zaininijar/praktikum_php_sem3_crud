@@ -2,8 +2,8 @@
 
 require 'global_func.php';
 
-$id = $_GET['id_mhs'];
-$sql = "SELECT * FROM mahasiswa WHERE id = $id";
+$id     = $_GET['id_mhs'];
+$sql    = "SELECT * FROM mahasiswa WHERE id = $id";
 $result = $conn->query($sql);
 
 if(mysqli_num_rows($result) > 0) {
